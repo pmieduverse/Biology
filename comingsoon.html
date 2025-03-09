@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMI Eduverse Examination - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow: hidden;
+            background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://pixabay.com/get/g0430148cee8aeb64861cf37de492c9577e74dee62645a0dc1c761287dc72668c72a97647c5b2f9422e7b29ab4633d318.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: brightness(0.3);
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(72, 52, 212, 0.3);
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            max-width: 95%;
+            margin: 15px;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            font-size: clamp(2em, 5vw, 4em);
+            font-weight: 700;
+            background: linear-gradient(45deg, #4834d4, #686de0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        p {
+            font-size: clamp(1em, 3vw, 1.6em);
+            margin: 15px 0;
+            line-height: 1.6;
+            color: #f0f0f0;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .countdown-item {
+            background: rgba(72, 52, 212, 0.2);
+            padding: clamp(10px, 3vw, 20px);
+            border-radius: 15px;
+            min-width: clamp(70px, 15vw, 100px);
+        }
+
+        .countdown-number {
+            font-size: clamp(1.5em, 4vw, 2.5em);
+            font-weight: bold;
+            color: #686de0;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-size: clamp(0.7em, 2vw, 0.9em);
+            color: #cccccc;
+            text-transform: uppercase;
+        }
+
+        .contact {
+            font-size: clamp(1em, 2.5vw, 1.3em);
+            margin-top: 20px;
+            color: #fff;
+            padding: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact a {
+            color: #686de0;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .contact a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #686de0;
+            transition: width 0.3s ease;
+        }
+
+        .contact a:hover::after {
+            width: 100%;
+        }
+
+        .ai-animation {
+            width: clamp(60px, 15vw, 120px);
+            height: clamp(60px, 15vw, 120px);
+            margin-top: 30px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(72,52,212,0.5));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .countdown {
+                gap: 10px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="container">
+        <h1>Coming Soon</h1>
+        <p>PMI Eduverse Examination Test Series will be available soon!</p>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+        <p class="contact">Need it sooner? Contact us at <a href="mailto:pmieduverse@gmail.com">pmieduverse@gmail.com</a></p>
+        <img src="https://i.ibb.co/tmCRtbt/pngwing-com.png" alt="AI Animation" class="ai-animation">
+    </div>
+
+    <script>
+        function createParticles() {
+            const particles = document.querySelector('.particles');
+            for(let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: rgba(72, 52, 212, ${Math.random() * 0.5});
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: particle ${5 + Math.random() * 5}s linear infinite;
+                `;
+                particles.appendChild(particle);
+            }
+        }
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        const endDate = new Date('2025-03-31T00:00:00');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = endDate - now;
+
+            if (timeLeft <= 0) {
+                document.querySelector('.countdown').innerHTML = "<h2>Launch Now!</h2>";
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            daysEl.innerHTML = days.toString().padStart(2, '0');
+            hoursEl.innerHTML = hours.toString().padStart(2, '0');
+            minutesEl.innerHTML = minutes.toString().padStart(2, '0');
+            secondsEl.innerHTML = seconds.toString().padStart(2, '0');
+        }
+
+        createParticles();
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || 
+                (event.shiftKey && (event.key === 'I' || event.key === 'i')) || 
+                event.key === 'c' || event.key === 'C')) {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('selectstart', event => event.preventDefault());
+
+        setInterval(function() {
+            if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+                document.body.innerHTML = '';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
